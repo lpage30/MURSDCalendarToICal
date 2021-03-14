@@ -1,0 +1,32 @@
+{
+  "name": "mursdcalendartoical",
+  "version": "1.0.0",
+  "description": "Mendon-Upton Regional School District (massachusetts) calendars should be ICal format or have ICal option. PDF is not useful to the tech savvy.",
+  "scripts": {
+    "ConvertToICal": "node ./main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lpage30/MURSDCalendarToICal.git"
+  },
+  "keywords": [
+    "MURSD",
+    "Calendar",
+    "PDF",
+    "ICal"
+  ],
+  "author": "Lawrence.Page@live.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lpage30/MURSDCalendarToICal/issues"
+  },
+  "homepage": "https://github.com/lpage30/MURSDCalendarToICal#readme",
+  "dependencies": {
+    "command-line-args": "^5.1.1",
+    "command-line-usage": "^5.0.5",
+    "ical-generator": "^1.7.1",
+    "node-fetch": "^2.6.0",
+    "pdf2html": "^2.5.2",
+    "uuid": "^3.3.3"
+  }
+}
