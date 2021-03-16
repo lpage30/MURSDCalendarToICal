@@ -65,7 +65,7 @@ const convertToDates = (eventDatesString, schoolYears) => {
         const start = rangeDates[0]
         const end = rangeDates[1] || start
         dates.push(start)
-        const days = end.getDate() - start.getDate()
+        const days = 1 + (end.getDate() - start.getDate())
         for (let day = 1; day <= days; day++) {
             const newDate = new Date(start.getTime())
             newDate.setDate(start.getDate() + day)
@@ -85,7 +85,11 @@ const convertToDates = (eventDatesString, schoolYears) => {
         })
         return result
     }, [])
-    return result
+    // always go from midnight to 11:59:59.999
+    return result.map(({start, end}) => ({
+        start,
+        end: new Date(end.getTime() - 1)
+    }))
 
 }
 const hasEvents = line => line.match(DATE_REGEX) !== null
